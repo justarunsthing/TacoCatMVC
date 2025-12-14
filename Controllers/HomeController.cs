@@ -11,6 +11,13 @@ namespace TacoCatMVC.Controllers
             return View();
         }
 
+        public IActionResult App()
+        {
+            var model = new Tacocat();
+
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
