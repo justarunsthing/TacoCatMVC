@@ -2,3 +2,33 @@
 @{
     ViewData["Title"] = "App";
 }
+
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+            <h1 class="display-6 fw-bold lh-1 mb-3">
+                TacoCat: A coding project
+            </h1>
+            <h4 class="lead pb-3">
+                Tacocat is a palindrome. A palindrome is a word, phrase, or a sequence
+                that reads the same forward and backward. Write a program that checks if
+                the phrase is a palindrome.
+            </h4>
+        </div>
+        <div class="col">
+            <h5 class="border-1 border-bottom border-danger">
+                Enter a word or a phrase to check:
+            </h5>
+            <form asp-controller="Home" asp-action="App" method="post">
+                <div class="col">
+                    <input type="text" asp-for="Input" class="form-control" placeholder="Enter a word or a phrase" />
+                </div>
+                <div class="col-12 pt-2">
+                    <button type="submit" class="btn btn-lg text-light action">
+                        Check it!
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
