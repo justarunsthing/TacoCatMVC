@@ -34,16 +34,16 @@ namespace TacoCatMVC.Controllers
 
                 if (reversedInput == userInput)
                 {
-                    model.Result = $"Well done, {model.Input} is a palindrome!";
+                    model.Result = $"Well done, \"{model.Input}\" is a palindrome!";
                     model.IsPalindrome = true;
                 }
                 else
                 {
-                    model.Result = $"Oops, {model.Input} is not a palindrome.";
+                    model.Result = $"Oops, \"{model.Input}\" is not a palindrome.";
                     model.IsPalindrome = false;
                 }
 
-                model.Message = $"Your phrase reversed is {reversedInput}";
+                model.Message = $"Your phrase reversed is \"{reversedInput}\"";
             }
 
             return View(model);
