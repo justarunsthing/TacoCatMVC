@@ -18,6 +18,35 @@ namespace TacoCatMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult App(Tacocat model)
+        {
+            if (!string.IsNullOrEmpty(model.Input))
+            {
+                var userInput = model.Input.ToLower().Replace(" ", "");
+                var reversedInput = string.Empty;
+
+                for (int i = userInput.Length - 1; i >= 0; i--)
+                {
+                    reversedInput += userInput[i];
+                }
+
+                if (reversedInput == userInput)
+                {
+                    model.Result = $"Well done, {model.Input} is a palindrome!";
+                    model.IsPalindrome = true;
+                }
+                else
+                {
+                    model.Result = $"Oops, {model.Input} is not a palindrome.";
+                    model.IsPalindrome = false;
+                }
+            }
+
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
