@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TacoCatMVC.Models;
 
@@ -42,6 +42,8 @@ namespace TacoCatMVC.Controllers
                     model.Result = $"Oops, {model.Input} is not a palindrome.";
                     model.IsPalindrome = false;
                 }
+
+                model.Message = $"Your phrase reversed is {reversedInput}";
             }
 
             return View(model);

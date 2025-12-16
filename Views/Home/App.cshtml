@@ -28,6 +28,21 @@
                         Check it!
                     </button>
                 </div>
+
+                @if (Model.Result != null)
+                {
+                    <div class="col pt-3">
+                        <div class="alert @(Model.IsPalindrome ? "alert-success" : "alert-danger")" role="alert">
+                            <h4>
+                                @Model.Result
+                            </h4>
+                            <hr />
+                            <p>
+                                @Model.Message
+                            </p>
+                        </div>
+                    </div>
+                }
             </form>
         </div>
     </div>
